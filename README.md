@@ -1,4 +1,4 @@
-# adarsha.dev
+# MalikHaziq.dev
 
 This is my personal website and blog built using:
 
