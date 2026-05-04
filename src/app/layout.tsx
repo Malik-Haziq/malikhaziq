@@ -8,9 +8,7 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Space_Grotesk } from "next/font/google";
 import { siteMetadata } from "@/data/siteMetadata";
 import Head from "./head";
-import { ENV } from "@/lib/env";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { ChatBot } from "@/components/bot/chat-bot";
 import { Toaster, toast } from 'sonner';
 import { Metadata } from "next/dist/types";
 
@@ -87,7 +85,6 @@ export default function RootLayout({
             <TailwindIndicator />
           </ThemeProvider>
         </Suspense>
-        <GoogleAnalytics gaId={ENV.GOOGLE_ANALYTICS_ID} />
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const undraftedBlogs = allBlogs.filter((blog) => !blog.draft);
   const blogRoutes = undraftedBlogs.map((post) => ({
-    url: `${siteUrl}/blog/${post.slug}`,
+    url: `${siteUrl}/blog`,
     lastModified: post.publishedAt,
   }));
 

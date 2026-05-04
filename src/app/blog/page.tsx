@@ -2,7 +2,6 @@ import { AnimatedBlogList } from "@/components/blog/animated-blog-list";
 import { Pagination } from "@/components/blog/pagination";
 import { SearchInput } from "../../components/blog/search-input";
 import { generatePageMetadata } from "../seo";
-import { ENV } from "@/lib/env";
 import { allBlogs } from "@/data/blogs"
 
 export const metadata = generatePageMetadata({
@@ -12,7 +11,6 @@ export const metadata = generatePageMetadata({
 });
 
 
-const isProd = ENV.NODE_ENV === "production";
 const BLOG_POSTS_PER_PAGE = 6;
 
 export default async function Blog({
