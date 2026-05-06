@@ -1,60 +1,53 @@
+// contentlayer.config.ts
 import {
-  ComputedFields,
   defineDocumentType,
-  makeSource,
+  makeSource
 } from "contentlayer2/source-files";
 import remarkGfm from "remark-gfm";
-import rehypePrettyCode, {
-  CharsElement,
-  LineElement,
-} from "rehype-pretty-code";
+import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import readingTime from "reading-time";
-
-/** @type {import('contentlayer/source-files').ComputedFields} */
-const computedFields: ComputedFields = {
+var computedFields = {
   slug: {
     type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.replace(/^.+?(\/)/, ""),
+    resolve: (doc) => doc._raw.flattenedPath.replace(/^.+?(\/)/, "")
   },
   readingTime: {
     type: "json",
     resolve: (doc) => {
       return readingTime(doc.body.raw);
-    },
-  },
+    }
+  }
 };
-
-export const Blog = defineDocumentType(() => ({
+var Blog = defineDocumentType(() => ({
   name: "Blog",
   filePathPattern: `**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
       type: "string",
-      required: true,
+      required: true
     },
     publishedAt: {
       type: "string",
-      required: true,
+      required: true
     },
     summary: {
       type: "string",
-      required: true,
+      required: true
     },
     image: {
-      type: "string",
+      type: "string"
     },
     draft: {
       type: "boolean",
-      default: false,
-    },
+      default: false
+    }
   },
-  computedFields,
+  computedFields
 }));
-
-export default makeSource({
+var contentlayer_config_default = makeSource({
   contentDirPath: "src/content",
   documentTypes: [Blog],
   mdx: {
@@ -62,35 +55,35 @@ export default makeSource({
     rehypePlugins: [
       rehypeSlug,
       [
-        rehypePrettyCode as any,
+        rehypePrettyCode,
         {
           theme: "one-dark-pro",
           keepBackground: false,
-     
-
-          onVisitHighlightedLine(node: LineElement) {
-            if (
-              node.properties.className &&
-              node.properties.className.length > 0
-            ) {
+          onVisitHighlightedLine(node) {
+            if (node.properties.className && node.properties.className.length > 0) {
               node.properties.className.push("line--highlighted");
             } else {
               node.properties.className = ["line--highlighted"];
             }
           },
-          onVisitHighlightedChars(node: CharsElement) {
+          onVisitHighlightedChars(node) {
             node.properties.className = ["word--highlighted"];
-          },
-        },
+          }
+        }
       ],
       [
         rehypeAutolinkHeadings,
         {
           properties: {
-            className: ["anchor"],
-          },
-        },
-      ],
-    ],
-  },
+            className: ["anchor"]
+          }
+        }
+      ]
+    ]
+  }
 });
+export {
+  Blog,
+  contentlayer_config_default as default
+};
+//# sourceMappingURL=compiled-contentlayer-config-PQQW3WXY.mjs.map
