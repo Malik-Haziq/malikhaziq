@@ -11,6 +11,7 @@ import Head from "./head";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Toaster, toast } from 'sonner';
 import { Metadata } from "next/dist/types";
+import { Analytics } from "@vercel/analytics/next"
 
 const space_grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -83,6 +84,7 @@ export default function RootLayout({
               <Toaster position="top-right" richColors />
             </main>
             <TailwindIndicator />
+            <Analytics/>
           </ThemeProvider>
         </Suspense>
       </body>
