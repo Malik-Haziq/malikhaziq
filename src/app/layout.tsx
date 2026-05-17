@@ -11,6 +11,7 @@ import Head from "./head";
 import { Toaster, toast } from 'sonner';
 import { Metadata } from "next/dist/types";
 import { Analytics } from "@vercel/analytics/next"
+import Script from "next/script";
 
 const space_grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -60,6 +61,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <Head />
+       {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TY0QE0BNSE"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TY0QE0BNSE');
+          `}
+        </Script>
       <body
         className={cn(
           "mx-auto min-h-screen max-w-3xl antialiased dark:bg-zinc-950 dark:text-gray-100",
