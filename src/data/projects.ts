@@ -35,6 +35,15 @@ export const WEB_APPS: WebApp[] = [
     tags: ["Next.js", "TRPC", "Better-Auth", "Drizzle", "Shadcn", "Pinecone", "Langchain", "OpenAI"],
     thumbnail: "/_static/projects/humantryx.png",
   },
+    {
+    title: "Zyrentis AI",
+    // repo: "https://github.com/Malik-Haziq/humantryx",
+    demo: "https://www.zyrentis.tech/",  
+    description:
+      " Zyrentis helps companies during technical interviews to find best engineers not vibe coders.",
+    tags: ["React", "Next.js", "Node.js", "Typescript", "Tailwind CSS", "Shadcn", "OpenAI API"],
+    thumbnail: "/_static/projects/zyrentis.png",
+  },
   {
     title: "CWN Solutions",
     repo: "https://github.com/Malik-Haziq/CWN-Tech",
