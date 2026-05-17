@@ -48,9 +48,9 @@ export default function Home() {
         </div>
 
         <div className="space-y-4 text-muted-foreground leading-relaxed">
-          <p>Malik Haziq, a frontend engineer with 3 years of experience.</p>
+          <p>Malik Haziq, a <strong className="text-foreground">frontend engineer</strong> with <strong className="text-foreground">3 years</strong> of experience.</p>
           <p>
-            Over the years, I&apos;ve worked on multiple products end-to-end across AI-powered web applications. I enjoy building things that are both well-crafted and actually useful.
+            Over the years, I&apos;ve worked on multiple products including <strong className="text-foreground">AI-powered web applications</strong>. I enjoy building in <strong className="text-foreground">React, Next.js and Typescript</strong>.
           </p>
           <p>
             If you’re working on something interesting or need someone who can

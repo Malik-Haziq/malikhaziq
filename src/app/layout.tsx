@@ -8,7 +8,6 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Space_Grotesk } from "next/font/google";
 import { siteMetadata } from "@/data/siteMetadata";
 import Head from "./head";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { Toaster, toast } from 'sonner';
 import { Metadata } from "next/dist/types";
 import { Analytics } from "@vercel/analytics/next"
